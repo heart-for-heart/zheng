@@ -1,0 +1,11 @@
+include:
+  - project: fe/inf/devops
+    ref: master
+    file: /browser/singleRepo/.ci.base-with-docker.yml
+
+variables:
+  IMAGE_NAME: 'zheng'
+  PROJECT_DIR_PATH: pc
+  PACKAGE_MANAGE: pnpm
+  LINT: 'true'
+  TEST: 'true'
