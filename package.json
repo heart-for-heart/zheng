@@ -24,11 +24,13 @@
     "ci:deploy": "spartan-cli-service ci:static --entryKey=zheng --env=$CI_ENVIRONMENT_NAME"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@h/h-rest": "latest",
     "@h/h-toolbox": "latest",
     "@h/sass": "latest",
     "@sentry/react": "^7.7.0",
     "@sentry/tracing": "^7.7.0",
+    "antd": "^4.24.1",
     "mobx": "^6.6.1",
     "mobx-react": "^7.5.2",
     "query-string": "^7.1.1",
