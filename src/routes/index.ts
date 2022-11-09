@@ -6,12 +6,8 @@ interface Route {
 }
 const routes = [
   {
-    path: '/',
-    element: lazy(() => import('@/pages/Home')),
-  },
-  {
-    path: '/about',
-    element: lazy(() => import('@/pages/About')),
+    path: '/marketing_case_management',
+    element: lazy(() => import('@/pages/MarketingCaseManagement')),
   },
 ] as Route[]
 

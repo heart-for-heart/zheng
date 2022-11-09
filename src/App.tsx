@@ -8,8 +8,7 @@ import './App.scss'
 
 const routerBaseName = getRouterBasename({
   hostname: window.location.hostname,
-  // TODO appName
-  entryKey: '',
+  entryKey: 'zheng',
   isDevelopment: runtime.isDevelopment,
   isProdEnv: runtime.isProdEnv,
 })
