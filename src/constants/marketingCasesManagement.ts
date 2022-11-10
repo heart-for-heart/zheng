@@ -42,3 +42,13 @@ export const DATE = {
   LATEST_7_DAYS: [moment().subtract(7, 'day'), moment()],
   LATEST_30_DAYS: [moment().subtract(30, 'day'), moment()],
 }
+
+export const enum Status {
+  Online = 'online',
+  Preparing = 'preparing',
+}
+
+export const StatusLabel = {
+  [Status.Online]: '已上线',
+  [Status.Preparing]: '准备中',
+}

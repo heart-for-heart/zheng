@@ -1,4 +1,5 @@
-import { DatePicker, Select } from 'antd'
+import { DatePicker, Popover, Select, Timeline } from 'antd'
+import cx from 'classnames'
 import moment from 'moment'
 import React, { useState } from 'react'
 
@@ -7,12 +8,15 @@ import {
   DATE,
   DateType,
   DateTypeLabel,
+  Status,
+  StatusLabel,
 } from '@/constants/marketingCasesManagement'
-import { DISPLAY_DATE_FORMAT } from '@/utils/date'
+import { DISPLAY_DATE_FORMAT, DISPLAY_TIME_FULL_FORMAT } from '@/utils/date'
 
-// TODO：王亚🍍
+import { SHOWING_DATA } from '../mock'
 
 const { Option } = Select
+const { Item } = Timeline
 
 const DateOptions = [
   {
@@ -26,6 +30,17 @@ const DateOptions = [
   {
     label: DateTypeLabel[DateType.Customize],
     key: DateType.Customize,
+  },
+]
+
+const StatusOptions = [
+  {
+    label: StatusLabel[Status.Online],
+    key: Status.Online,
+  },
+  {
+    label: StatusLabel[Status.Preparing],
+    key: Status.Preparing,
   },
 ]
 
@@ -52,7 +67,7 @@ const MarketingCard: React.FC = () => {
     <div className='marketing-card'>
       <div className='search-part'>
         <Select
-          style={{ width: 95, marginRight: 10 }}
+          style={{ width: 95, marginRight: 15 }}
           defaultValue={DateType.Latest7Days}
           onChange={handleDateChange}
         >
@@ -73,6 +88,57 @@ const MarketingCard: React.FC = () => {
           disabledDate={current => current > moment().endOf('day')}
           onChange={v => setSelectedDate(v)}
         />
+        <Select
+          style={{ width: 95, marginLeft: 15 }}
+          defaultValue={Status.Online}
+        >
+          {StatusOptions.map(opt => (
+            <Option key={opt.key} value={opt.key}>
+              {opt.label}
+            </Option>
+          ))}
+        </Select>
+      </div>
+      <div className='showing-part'>
+        <div className='showing-part-container'>
+          <Timeline className='showing-part-timeline' mode='left'>
+            {SHOWING_DATA.map((data, i) => (
+              <Item label={data.time} key={i}>
+                <div className='showing-part-timeline-item'>
+                  <div className='timeline-item-container'>
+                    <div className='title'>{data.title}</div>
+                    <div className='content'>{data.content}</div>
+                    <div className='big-container'>
+                      <div
+                        className='small-container'
+                        style={{ marginRight: 30 }}
+                      >
+                        <div className='business-group'>
+                          商户：{data.businessGroup}
+                        </div>
+                        <div className='coupon'>优惠券：{data.coupon}</div>
+                      </div>
+                      <div className='small-container'>
+                        <div className='business'>门店：{data.business}</div>
+                        <div className='status'>
+                          状态：
+                          <span
+                            className={cx({
+                              online: data.status === Status.Online,
+                              prepare: data.status === Status.Preparing,
+                            })}
+                          >
+                            {StatusLabel[data.status]}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Item>
+            ))}
+          </Timeline>
+        </div>
       </div>
     </div>
   )

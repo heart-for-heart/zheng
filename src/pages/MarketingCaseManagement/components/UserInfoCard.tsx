@@ -1,7 +1,7 @@
 import { MailOutlined, UserOutlined } from '@ant-design/icons'
 import React from 'react'
 
-import { USER_INFO } from '@/pages/mock'
+import { USER_INFO } from '@/pages/MarketingCaseManagement/mock'
 import { UserInfo } from '@/types/marketingCasesManagement'
 
 import CasesCard from './CasesCard'
