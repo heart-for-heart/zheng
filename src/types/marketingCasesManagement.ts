@@ -1,3 +1,5 @@
+import { NavType } from '@/constants/marketingCasesManagement'
+
 export interface UserInfo {
   pic: string
   name: string
@@ -10,4 +12,9 @@ export interface DataCount {
   casesPublishedCount: number
   fansCount: number
   influence: number
+}
+
+export interface Nav {
+  label: string
+  value: NavType
 }
