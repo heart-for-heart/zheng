@@ -49,9 +49,9 @@ const getDataCountCard = () => (
 )
 
 const CasesDisplayCard: React.FC = () => (
-    <div className='cases-display-card'>
-      {getDataCountCard()}
-      <CasesSquare />
-    </div>
-  )
+  <div className='cases-display-card'>
+    {getDataCountCard()}
+    <CasesSquare />
+  </div>
+)
 export default CasesDisplayCard

@@ -4,6 +4,8 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import routes from '@/routes'
 import { getRouterBasename, runtime } from '@/utils'
 
+import 'antd/dist/antd.css'
+
 import './App.scss'
 
 const routerBaseName = getRouterBasename({
