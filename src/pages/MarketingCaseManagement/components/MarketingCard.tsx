@@ -50,7 +50,7 @@ const MarketingCard: React.FC = () => {
 
   return (
     <div className='marketing-card'>
-      <div className='serach-part'>
+      <div className='search-part'>
         <Select
           style={{ width: 95, marginRight: 10 }}
           defaultValue={DateType.Latest7Days}
