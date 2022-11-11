@@ -9,7 +9,7 @@ import {
   VideoCameraAddOutlined,
   WechatOutlined,
 } from '@ant-design/icons'
-import { Menu, MenuProps } from 'antd'
+import { Form, Input, Menu, MenuProps } from 'antd'
 import cx from 'classnames'
 import React, { useState } from 'react'
 
@@ -89,6 +89,28 @@ const CreateCase: React.FC<CreateCaseProps> = props => {
           items={items}
           className='create-case-menu'
         />
+        <div className='create-case-form'>
+          <div className='action-btn'>
+            <a className='btn cancel' onClick={handleClickCases}>
+              取消
+            </a>
+            <a className='btn save'>保存</a>
+          </div>
+          <Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
+            <Form.Item label='商户'>
+              <Input />
+            </Form.Item>
+            <Form.Item label='门店'>
+              <Input />
+            </Form.Item>
+            <Form.Item label='案例内容'>
+              <Input.TextArea style={{ width: 500, height: 200 }} />
+            </Form.Item>
+            <Form.Item label='营销亮点'>
+              <Input />
+            </Form.Item>
+          </Form>
+        </div>
       </div>
     </div>
   )

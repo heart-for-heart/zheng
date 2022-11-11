@@ -11,6 +11,10 @@ $color-red: #e34a4a;
   border-radius: 4px;
 }
 
+.ant-input {
+  border-radius: 4px;
+}
+
 .marketing-case-management {
   height: 100%;
 
@@ -528,7 +532,38 @@ $color-red: #e34a4a;
         display: flex;
         justify-content: start;
 
-        .create-case-menu {
+        .create-case-form {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .btn {
+            padding: 4px 8px;
+            border-radius: 4px;
+          }
+
+          .action-btn {
+            width: 100%;
+            text-align: right;
+          }
+
+          .cancel {
+            border: 1px solid $primary-color;
+            margin-right: 20px;
+          }
+
+          .save {
+            background: $primary-color;
+            color: #fff;
+          }
+
+          .choose-coupon-btn {
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: $primary-color;
+            color: #fff;
+          }
         }
       }
     }
