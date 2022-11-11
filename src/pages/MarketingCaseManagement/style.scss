@@ -106,6 +106,12 @@ $color-red: #e34a4a;
               height: 100%;
               overflow-y: auto;
 
+              .category-card {
+                &.ant-menu {
+                  border-right: none;
+                }
+              }
+
               > .label-card {
                 cursor: pointer;
 
@@ -501,5 +507,70 @@ $color-red: #e34a4a;
         }
       }
     }
+  }
+}
+
+// 案例详情页
+.case-detail {
+  flex: 1;
+  overflow-y: auto;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  background-color: #f7f7f7;
+  padding: 20px;
+
+  > .card {
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 8px;
+    width: 100%;
+
+    &.business-card {
+      display: flex;
+
+      > img {
+        width: 80px;
+        height: 80px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        margin: 0 20px;
+      }
+
+      > .business-info {
+        > .business-name {
+          text-align: left;
+        }
+
+        .description {
+          text-align: left;
+          text-indent: 2em;
+        }
+      }
+    }
+
+    > h3 {
+      text-align: left;
+      transform: translateX(16px);
+    }
+    
+    > h4 {
+      text-align: left;
+      transform: translateX(32px);
+    }
+
+    > P {
+      text-align: left;
+      text-indent: 2em;
+      padding: 0 30px;
+      line-height: 2em;
+    }
+  }
+
+  > h2 {
+    width: 100%;
+    text-align: left;
+    margin: 16px;
+    transform: translateX(16px);
   }
 }

@@ -12,7 +12,7 @@ import {
   StatusLabel,
 } from '@/constants/marketingCasesManagement'
 import { SHOWING_DATA } from '@/pages/mock'
-import { DISPLAY_DATE_FORMAT } from '@/utils/date'
+import { DISPLAY_DATE_FORMAT, DISPLAY_TIME_FULL_FORMAT } from '@/utils/date'
 
 const { Option } = Select
 const { Item } = Timeline

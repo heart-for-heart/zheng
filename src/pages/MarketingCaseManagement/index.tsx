@@ -1,6 +1,7 @@
 import { EnvironmentOutlined } from '@ant-design/icons'
 import React, { useState } from 'react'
 
+import CaseDetail from './components/CaseDetail'
 import CasesDisplayCard from './components/CasesDisplayCard'
 import CreateCase from './components/CreateCase'
 import UserInfoCard from './components/UserInfoCard'
@@ -21,7 +22,8 @@ const MarketingCaseManagement: React.FC = () => {
         {showCreateCard ? (
           <CreateCase onGoBack={() => setShowCreateCard(false)} />
         ) : (
-          <CasesDisplayCard onCreateCase={() => setShowCreateCard(true)} />
+          // <CasesDisplayCard onCreateCase={() => setShowCreateCard(true)} />
+      <CaseDetail />
         )}
       </div>
     </div>

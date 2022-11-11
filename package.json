@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@antv/g6": "^4.7.12",
     "@h/h-rest": "latest",
     "@h/h-toolbox": "latest",
     "@h/sass": "latest",

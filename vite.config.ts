@@ -32,7 +32,8 @@ export default defineConfig({
       less: {
         javascriptEnabled: true,
         modifyVars: {
-          '@primary-color': '#1DA57A',
+          '@primary-color': '#b2c282', // 全局主色
+          '@link-color': '#b2c282', // 链接色
         },
       },
     },
