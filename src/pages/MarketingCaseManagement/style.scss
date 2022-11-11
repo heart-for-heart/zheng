@@ -7,6 +7,10 @@ $color-red: #e34a4a;
   align-items: center;
 }
 
+.ant-select {
+  border-radius: 4px;
+}
+
 .marketing-case-management {
   height: 100%;
 
@@ -90,7 +94,7 @@ $color-red: #e34a4a;
 
           > .title {
             height: 46px;
-            background-color: #f1f1f1;
+            background-color: #f7f7f7;
             display: flex;
             align-items: center;
             font-size: 16px;
@@ -148,6 +152,7 @@ $color-red: #e34a4a;
                     display: flex;
                     align-content: center;
                     justify-content: space-between;
+                    margin-bottom: 10px;
 
                     > .title {
                       width: 220px;
@@ -155,7 +160,6 @@ $color-red: #e34a4a;
                       text-align: left;
                       white-space: nowrap;
                       text-overflow: ellipsis;
-                      margin-bottom: 10px;
 
                       &:hover {
                         color: $primary-color;
@@ -236,7 +240,7 @@ $color-red: #e34a4a;
       height: 52px;
       display: flex;
       align-items: center;
-      font-size: 14px;
+      font-size: 16px;
       border-radius: 4px;
       margin-right: 20px;
       padding: 0 5px;
@@ -383,7 +387,6 @@ $color-red: #e34a4a;
       padding: 15px 35px;
 
       .tab-bar {
-        margin-top: 15px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -395,17 +398,39 @@ $color-red: #e34a4a;
         padding-left: 10px;
       }
 
+      .search-area {
+        display: flex;
+
+        .label {
+          font-size: 14px;
+
+          &:first-child {
+            margin-right: 20px;
+          }
+        }
+      }
+
+      .create-case-btn {
+        border-radius: 4px;
+        background: $primary-color;
+        color: #fff;
+        border: 1px solid $primary-color;
+        padding: 4px 8px;
+        cursor: pointer;
+      }
+
       .cases-content {
-        margin-top: 10px;
+        margin-top: 20px;
         background-color: #f2f2f2;
         padding: 20px 10px;
-        min-height: 350px;
-        max-height: 500px;
+        height: 430px;
         border-radius: 5px;
+        overflow-y: scroll;
 
         .content-item {
           display: flex;
           margin-bottom: 20px;
+
           .avatar {
             background-color: #1890ff;
           }
@@ -520,7 +545,18 @@ $color-red: #e34a4a;
   background-color: #f7f7f7;
   padding: 20px;
 
+  .bread-crumb {
+    .action-btn {
+      color: #000;
+
+      &.selected {
+        color: $primary-color;
+      }
+    }
+  }
+
   > .card {
+    margin-bottom: 50px;
     padding: 16px;
     background-color: #fff;
     border-radius: 8px;
@@ -528,23 +564,32 @@ $color-red: #e34a4a;
 
     &.business-card {
       display: flex;
+      justify-content: space-between;
 
-      > img {
-        width: 80px;
-        height: 80px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        margin: 0 20px;
-      }
+      .img-business {
+        display: flex;
 
-      > .business-info {
-        > .business-name {
-          text-align: left;
+        > img {
+          width: 80px;
+          height: 80px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          margin: 0 20px;
         }
 
-        .description {
-          text-align: left;
-          text-indent: 2em;
+        > .business-info {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .bread-crumb {
+        .action-btn {
+          font-size: 16px;
+          border-radius: 4px;
+          padding: 4px 16px;
+          background: $primary-color;
+          color: #fff;
         }
       }
     }
@@ -553,7 +598,7 @@ $color-red: #e34a4a;
       text-align: left;
       transform: translateX(16px);
     }
-    
+
     > h4 {
       text-align: left;
       transform: translateX(32px);

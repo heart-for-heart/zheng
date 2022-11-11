@@ -3,10 +3,9 @@ import { Radio, Menu, Input, Tag, List } from 'antd'
 import { observer } from 'mobx-react'
 import React, { ReactNode, useState } from 'react'
 
-
+import { categoryData, labelData, hotCaseData } from '@/pages/mock'
 import store from '@/stores/index'
 
-import { categoryData, labelData, hotCaseData } from '@/pages/mock'
 
 const tabs = [
   {
@@ -77,9 +76,14 @@ const LabelCard: React.FC = () => {
   )
 }
 
-const HotCaseCard: React.FC = () => {
+interface HotCaseProps {
+  onCaseDetail(): void
+}
+
+const HotCaseCard: React.FC<HotCaseProps> = props => {
   const [searchText, setSearchText] = useState('')
   const [hotCaseDataState, setHotCaseDataState] = useState(hotCaseData)
+  const { onCaseDetail } = props
 
   return (
     <div className='hot-case-card'>
@@ -94,7 +98,7 @@ const HotCaseCard: React.FC = () => {
         {hotCaseDataState
           .filter(i => i.title.includes(searchText))
           .map((item, index) => (
-            <div key={index} className='list-item'>
+            <div key={index} className='list-item' onClick={onCaseDetail}>
               <div className='title'>{`${index + 1}. ${item.title}`}</div>
               <div className='extra'>
                 <div
@@ -139,14 +143,18 @@ const TabCard: React.FC<{ title: string; content?: ReactNode }> = props => {
     </div>
   )
 }
+interface CasesCardProps {
+  onCaseDetail(): void
+}
 
-const CasesCard: React.FC = () => {
+const CasesCard: React.FC<CasesCardProps> = props => {
   const [currentTab, setCurrentTab] = useState(tabs[0])
+  const { onCaseDetail } = props
 
   const renderContent: { [key: string]: ReactNode } = {
     category: <CategoryCard key='category' />,
     label: <LabelCard key='label' />,
-    hotCase: <HotCaseCard key='hotCase' />,
+    hotCase: <HotCaseCard key='hotCase' onCaseDetail={onCaseDetail} />,
   }
 
   return (

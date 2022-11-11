@@ -4,81 +4,90 @@ import {
   CommentOutlined,
   HeartOutlined,
 } from '@ant-design/icons'
-import { Input, Select, Button, Space, Tag, Avatar } from 'antd'
+import { Button, Tag, Avatar, TreeSelect, Select } from 'antd'
 import React from 'react'
 
-import { CASES_DATA } from '../../mock'
+import { LabelType, LabelTypeLabel } from '@/constants/marketingCasesManagement'
 
-// TODO：结平 + 文梁 🍓
+import { CASES_DATA, CATEGORY_DATA } from '../../mock'
+
+const { Option } = Select
 
 const greenColor = '#82BA67'
-const { CheckableTag } = Tag
-const suffix = (
-  <SearchOutlined
-    style={{
-      fontSize: 16,
-      color: greenColor,
-    }}
-  />
-)
+
+const labelData = [
+  {
+    key: LabelType.High,
+    value: LabelTypeLabel[LabelType.High],
+  },
+  {
+    key: LabelType.Specific,
+    value: LabelTypeLabel[LabelType.Specific],
+  },
+  {
+    key: LabelType.Coffee,
+    value: LabelTypeLabel[LabelType.Coffee],
+  },
+  {
+    key: LabelType.Hotpot,
+    value: LabelTypeLabel[LabelType.Hotpot],
+  },
+  {
+    key: LabelType.New,
+    value: LabelTypeLabel[LabelType.New],
+  },
+  {
+    key: LabelType.Explode,
+    value: LabelTypeLabel[LabelType.Explode],
+  },
+  {
+    key: LabelType.Japan,
+    value: LabelTypeLabel[LabelType.Japan],
+  },
+]
 
 interface CasesShowingCardProps {
   onCreateCase(): void
+  onCaseDetail(): void
 }
 
 const CasesShowingCard: React.FC<CasesShowingCardProps> = props => {
-  const { onCreateCase } = props
+  const { onCreateCase, onCaseDetail } = props
 
   return (
     <div className='cases-showing-card'>
-      <Input suffix={suffix} />
       <div className='tab-bar'>
-        <div>
-          <Select
-            defaultValue='分类'
-            bordered={false}
-            options={[
-              {
-                label: '分类',
-                value: '分类',
-              },
-            ]}
-          />
-          <Select
-            defaultValue='标签'
-            bordered={false}
-            options={[
-              {
-                label: '标签',
-                value: '标签',
-              },
-            ]}
-          />
+        <div className='search-area'>
+          <div className='label'>
+            分类：
+            <TreeSelect
+              allowClear
+              placeholder='请选择分类'
+              style={{ width: 160 }}
+              treeData={CATEGORY_DATA}
+            />
+          </div>
+          <div className='label'>
+            标签：
+            <Select style={{ width: 100 }} defaultValue={LabelType.Hotpot}>
+              {labelData.map(l => (
+                <Option key={l.key} value={l.key}>
+                  {l.value}
+                </Option>
+              ))}
+            </Select>
+          </div>
         </div>
         <div>
-          <Button
-            type='primary'
-            shape='round'
-            icon={<PlusOutlined />}
-            style={{ backgroundColor: greenColor, borderColor: greenColor }}
-            size='small'
-            onClick={onCreateCase}
-          >
+          <div className='create-case-btn' onClick={onCreateCase}>
             新建案例
-          </Button>
+          </div>
         </div>
       </div>
-      <div className='tag-bar'>
-        <Space>
-          <CheckableTag checked={true} style={{ backgroundColor: greenColor }}>
-            最新
-          </CheckableTag>
-          <CheckableTag checked={false}>最热</CheckableTag>
-        </Space>
-      </div>
+
       <div className='cases-content'>
-        {CASES_DATA.map(item => (
-          <div className='content-item'>
+        {CASES_DATA.map((item, i) => (
+          <div className='content-item' key={i}>
             <Avatar
               src='https://joeschmoe.io/api/v1/random'
               className='avatar'
@@ -92,7 +101,11 @@ const CasesShowingCard: React.FC<CasesShowingCardProps> = props => {
               }}
             >
               <span className='name'>{item.accountName}</span>
-              <div className='chat' style={{ width: '100%' }}>
+              <div
+                className='chat'
+                style={{ width: '100%', cursor: 'pointer' }}
+                onClick={onCaseDetail}
+              >
                 <span className='title'>{item.title}</span>
                 <div className='chat-content'>{item.content}</div>
                 <div className='tag-group'>

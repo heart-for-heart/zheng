@@ -1,7 +1,6 @@
 import { makeAutoObservable } from 'mobx'
 
 class Data {
-
   currentCase = null
 
   constructor() {

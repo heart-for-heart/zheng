@@ -24,15 +24,23 @@ const UserInfoDetail: React.FC<UserInfo> = props => {
   )
 }
 
-const UserInfoCard: React.FC = () => (
-  <div className='user-info-card'>
-    <UserInfoDetail
-      pic={USER_INFO.pic}
-      name={USER_INFO.name}
-      email={USER_INFO.email}
-    />
-    <CasesCard />
-  </div>
-)
+interface UserInfoCardProps {
+  onCaseDetail(): void
+}
+
+const UserInfoCard: React.FC<UserInfoCardProps> = props => {
+  const { onCaseDetail, onGoBack } = props
+
+  return (
+    <div className='user-info-card'>
+      <UserInfoDetail
+        pic={USER_INFO.pic}
+        name={USER_INFO.name}
+        email={USER_INFO.email}
+      />
+      <CasesCard onCaseDetail={onCaseDetail} />
+    </div>
+  )
+}
 
 export default UserInfoCard

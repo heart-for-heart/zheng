@@ -71,3 +71,23 @@ export const MarketingTypeLabel = {
   [MarketingType.Manual]: '主动营销',
   [MarketingType.Article]: '软文营销',
 }
+
+export const enum LabelType {
+  High = 'high',
+  Specific = 'specific',
+  Coffee = 'coffee',
+  Hotpot = 'hotpot',
+  New = 'new',
+  Explode = 'explode',
+  Japan = 'japan',
+}
+
+export const LabelTypeLabel = {
+  [LabelType.High]: '高客单价',
+  [LabelType.Specific]: '精准投放',
+  [LabelType.Coffee]: '咖啡',
+  [LabelType.Hotpot]: '火锅',
+  [LabelType.New]: '拉新',
+  [LabelType.Explode]: '提高曝光',
+  [LabelType.Japan]: '日料',
+}
