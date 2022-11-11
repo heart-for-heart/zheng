@@ -6,7 +6,6 @@ import React, { ReactNode, useState } from 'react'
 import { categoryData, labelData, hotCaseData } from '@/pages/mock'
 import store from '@/stores/index'
 
-
 const tabs = [
   {
     key: 'category',
@@ -98,8 +97,10 @@ const HotCaseCard: React.FC<HotCaseProps> = props => {
         {hotCaseDataState
           .filter(i => i.title.includes(searchText))
           .map((item, index) => (
-            <div key={index} className='list-item' onClick={onCaseDetail}>
-              <div className='title'>{`${index + 1}. ${item.title}`}</div>
+            <div key={index} className='list-item'>
+              <div className='title' onClick={onCaseDetail}>{`${index + 1}. ${
+                item.title
+              }`}</div>
               <div className='extra'>
                 <div
                   onClick={() => {
