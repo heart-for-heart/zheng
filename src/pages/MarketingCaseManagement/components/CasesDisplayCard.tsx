@@ -2,9 +2,10 @@ import { InfoCircleOutlined } from '@ant-design/icons'
 import React from 'react'
 
 import { DataType, DataTypeLabel } from '@/constants/marketingCasesManagement'
-import { DATA_COUNT } from '../../mock'
 
 import CasesSquare from './CasesSquare'
+
+import { DATA_COUNT } from '../../mock'
 
 const dataCountSArr = [
   {

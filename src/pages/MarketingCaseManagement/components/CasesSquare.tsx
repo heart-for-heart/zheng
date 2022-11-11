@@ -28,7 +28,6 @@ const CasesSquare: React.FC<CasesSquareProps> = props => {
   const [selectedNav, setSelectedNav] = useState<NavType>(NavType.Marketing)
   const { onCreateCase } = props
 
-
   return (
     <div className='cases-square'>
       <div className='nav-items'>

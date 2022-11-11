@@ -1,7 +1,15 @@
-import { Case, DataCount, UserInfo} from '@/types/marketingCasesManagement'
-import moment from "moment/moment";
-import {DISPLAY_TIME_FULL_FORMAT} from "@/utils/date";
-import {Status} from "@/constants/marketingCasesManagement";
+import moment from 'moment/moment'
+
+import {
+  DateType,
+  MarketingType,
+  Status,
+} from '@/constants/marketingCasesManagement'
+import { Case, DataCount, UserInfo } from '@/types/marketingCasesManagement'
+import {
+  DISPLAY_DATE_FULL_FORMAT,
+  DISPLAY_TIME_FULL_FORMAT,
+} from '@/utils/date'
 
 export const USER_INFO: UserInfo = {
   pic: 'https://media.kezaihui.com/temp/7ff8d148051f461ead5891ea99de7450.jpeg',
@@ -16,7 +24,6 @@ export const DATA_COUNT: DataCount = {
   fansCount: 128,
   influence: 1289,
 }
-
 
 export const categoryData = [
   {
@@ -155,77 +162,279 @@ export const hotCaseData = [
 
 export const SHOWING_DATA = [
   {
-    time: moment().format(DISPLAY_TIME_FULL_FORMAT),
-    title: '这是自动营销：12345',
-    content: '嘻嘻嘻嘻嘻嘻',
-    businessGroup: '惠吧烤鱼',
-    business: '海亮大厦',
-    coupon: '叮叮当',
+    dateType: DateType.Latest7Days,
+    time: moment()
+      .subtract(3, 'day')
+      .add(1, 'hour')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+    title: '🐷 软文营销： LET US GO PARTY!!!',
+    content: '小资轰趴 凡消费满 1000 减 200',
+    businessGroup: '叮当又见轰趴馆',
+    business: '天府大道25号',
+    coupon: '每满 1000 减 200',
     status: Status.Online,
+    type: MarketingType.Article,
   },
   {
-    time: moment().format(DISPLAY_TIME_FULL_FORMAT),
-    title: '这是自动营销：12345',
-    content: '嘻嘻嘻嘻嘻嘻',
-    businessGroup: '惠吧烤鱼',
-    business: '海亮大厦',
-    coupon: '叮叮当',
+    dateType: DateType.Latest7Days,
+    time: moment()
+      .subtract(4, 'day')
+      .add(3, 'hour')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+    title: '🐻 软文营销： LET US GO PARTY!!!',
+    content: '小资轰趴 凡消费满 1000 减 200',
+    businessGroup: '叮当又见轰趴馆',
+    business: '天府大道25号',
+    coupon: '每满 1000 减 200',
     status: Status.Online,
+    type: MarketingType.Article,
   },
   {
-    time: moment().format(DISPLAY_TIME_FULL_FORMAT),
-    title: '这是自动营销：12345',
-    content: '嘻嘻嘻嘻嘻嘻',
-    businessGroup: '惠吧烤鱼',
-    business: '海亮大厦',
-    coupon: '叮叮当',
-    status: Status.Preparing,
+    time: moment()
+      .subtract(5, 'day')
+      .add(2, 'hour')
+      .add(22, 'minute')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+
+    dateType: DateType.Latest7Days,
+    title: '🐝 自动营销： 每周四CRAZY THURSDAY',
+    content: '德克士会员 小程序可领一张全场第二份半价优惠券',
+    businessGroup: '麦当劳',
+    business: '财富又一城分店',
+    coupon: '全场第二份半价',
+    status: Status.Online,
+    type: MarketingType.Manual,
   },
   {
-    time: moment().format(DISPLAY_TIME_FULL_FORMAT),
-    title: '这是自动营销：12345',
-    content: '嘻嘻嘻嘻嘻嘻',
-    businessGroup: '惠吧烤鱼',
-    business: '海亮大厦',
-    coupon: '叮叮当',
+    dateType: DateType.Latest30Days,
+    time: moment()
+      .subtract(10, 'day')
+      .add(1, 'hour')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+    title: '🐱 一键导入： 每天都有好心情',
+    content: '小资轰趴 凡消费满 1000 减 200',
+    businessGroup: '叮当又见轰趴馆',
+    business: '天府大道25号',
+    coupon: '每满 1000 减 200',
     status: Status.Online,
+    type: MarketingType.Import,
   },
   {
-    time: moment().format(DISPLAY_TIME_FULL_FORMAT),
-    title: '这是自动营销：12345',
-    content: '嘻嘻嘻嘻嘻嘻',
-    businessGroup: '惠吧烤鱼',
-    business: '海亮大厦',
-    coupon: '叮叮当',
-    status: Status.Online,
+    dateType: DateType.Latest30Days,
+    time: moment()
+      .subtract(11, 'day')
+      .add(3, 'hour')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+    title: '🐶 软文营销： LET US GO PARTY!!!',
+    content: '小资轰趴 凡消费满 1000 减 200',
+    businessGroup: '叮当又见轰趴馆',
+    business: '天府大道25号',
+    coupon: '每满 1000 减 200',
+    status: Status.Checking,
+    type: MarketingType.Article,
   },
   {
-    time: moment().format(DISPLAY_TIME_FULL_FORMAT),
-    title: '这是自动营销：12345',
-    content: '嘻嘻嘻嘻嘻嘻',
-    businessGroup: '惠吧烤鱼',
-    business: '海亮大厦',
-    coupon: '叮叮当',
+    time: moment()
+      .subtract(12, 'day')
+      .add(2, 'hour')
+      .add(22, 'minute')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+
+    dateType: DateType.Latest30Days,
+    title: '🐰 自动营销： 每周四CRAZY THURSDAY',
+    content: '德克士会员 小程序可领一张全场第二份半价优惠券',
+    businessGroup: '麦当劳',
+    business: '财富又一城分店',
+    coupon: '全场第二份半价',
     status: Status.Online,
+    type: MarketingType.Manual,
   },
   {
-    time: moment().format(DISPLAY_TIME_FULL_FORMAT),
-    title: '这是自动营销：12345',
-    content: '嘻嘻嘻嘻嘻嘻',
-    businessGroup: '惠吧烤鱼',
-    business: '海亮大厦',
-    coupon: '叮叮当',
+    dateType: DateType.Latest30Days,
+    time: moment()
+      .subtract(13, 'day')
+      .add(1, 'hour')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+    title: '🐴 一键导入： 每天都有好心情',
+    content: '小资轰趴 凡消费满 1000 减 200',
+    businessGroup: '叮当又见轰趴馆',
+    business: '天府大道25号',
+    coupon: '每满 1000 减 200',
+    status: Status.ToCheck,
+    type: MarketingType.Import,
+  },
+
+  {
+    dateType: DateType.Latest30Days,
+    time: moment()
+      .subtract(14, 'day')
+      .add(2, 'hour')
+      .add(22, 'minute')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+    title: '🍉 自动营销： 每周四CRAZY THURSDAY',
+    content: '德克士会员 小程序可领一张全场第二份半价优惠券',
+    businessGroup: '麦当劳',
+    business: '财富又一城分店',
+    coupon: '全场第二份半价',
     status: Status.Online,
+    type: MarketingType.Manual,
+  },
+  {
+    dateType: DateType.Latest30Days,
+    time: moment()
+      .subtract(15, 'day')
+      .add(1, 'hour')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+    title: ' 一键导入： 每天都有好心情',
+    content: '小资轰趴 凡消费满 1000 减 200',
+    businessGroup: '叮当又见轰趴馆',
+    business: '天府大道25号',
+    coupon: '每满 1000 减 200',
+    status: Status.Online,
+    type: MarketingType.Import,
+  },
+  {
+    dateType: DateType.Latest30Days,
+    time: moment()
+      .subtract(16, 'day')
+      .add(3, 'hour')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+    title: '🍇 软文营销： LET US GO PARTY!!!',
+    content: '小资轰趴 凡消费满 1000 减 200',
+    businessGroup: '叮当又见轰趴馆',
+    business: '天府大道25号',
+    coupon: '每满 1000 减 200',
+    status: Status.Checking,
+    type: MarketingType.Article,
+  },
+  {
+    time: moment()
+      .subtract(17, 'day')
+      .add(2, 'hour')
+      .add(22, 'minute')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+
+    dateType: DateType.Latest30Days,
+    title: '🌽 自动营销： 每周四CRAZY THURSDAY',
+    content: '德克士会员 小程序可领一张全场第二份半价优惠券',
+    businessGroup: '麦当劳',
+    business: '财富又一城分店',
+    coupon: '全场第二份半价',
+    status: Status.Online,
+    type: MarketingType.Manual,
+  },
+  {
+    dateType: DateType.Latest30Days,
+    time: moment()
+      .subtract(18, 'day')
+      .add(1, 'hour')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+    title: '🐴 一键导入： 每天都有好心情',
+    content: '小资轰趴 凡消费满 1000 减 200',
+    businessGroup: '叮当又见轰趴馆',
+    business: '天府大道25号',
+    coupon: '每满 1000 减 200',
+    status: Status.ToCheck,
+    type: MarketingType.Import,
+  },
+  {
+    dateType: DateType.Latest30Days,
+    time: moment()
+      .subtract(19, 'day')
+      .add(3, 'hour')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+    title: '🍊 软文营销： LET US GO PARTY!!!',
+    content: '小资轰趴 凡消费满 1000 减 200',
+    businessGroup: '叮当又见轰趴馆',
+    business: '天府大道25号',
+    coupon: '每满 1000 减 200',
+    status: Status.Online,
+    type: MarketingType.Article,
+  },
+  {
+    time: moment()
+      .subtract(23, 'day')
+      .add(2, 'hour')
+      .add(22, 'minute')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+
+    dateType: DateType.Latest30Days,
+    title: '🍓 自动营销： 每周四CRAZY THURSDAY',
+    content: '德克士会员 小程序可领一张全场第二份半价优惠券',
+    businessGroup: '麦当劳',
+    business: '财富又一城分店',
+    coupon: '全场第二份半价',
+    status: Status.ToCheck,
+    type: MarketingType.Manual,
+  },
+  {
+    dateType: DateType.Latest30Days,
+    time: moment()
+      .subtract(24, 'day')
+      .add(1, 'hour')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+    title: '🌹 一键导入： 每天都有好心情',
+    content: '小资轰趴 凡消费满 1000 减 200',
+    businessGroup: '叮当又见轰趴馆',
+    business: '天府大道25号',
+    coupon: '每满 1000 减 200',
+    status: Status.Online,
+    type: MarketingType.Import,
+  },
+  {
+    dateType: DateType.Latest30Days,
+    time: moment()
+      .subtract(25, 'day')
+      .add(3, 'hour')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+    title: '💻 软文营销： LET US GO PARTY!!!',
+    content: '小资轰趴 凡消费满 1000 减 200',
+    businessGroup: '叮当又见轰趴馆',
+    business: '天府大道25号',
+    coupon: '每满 1000 减 200',
+    status: Status.Checking,
+    type: MarketingType.Article,
+  },
+  {
+    time: moment()
+      .subtract(26, 'day')
+      .add(2, 'hour')
+      .add(22, 'minute')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+
+    dateType: DateType.Latest30Days,
+    title: '🦋 自动营销： 每周四CRAZY THURSDAY',
+    content: '德克士会员 小程序可领一张全场第二份半价优惠券',
+    businessGroup: '麦当劳',
+    business: '财富又一城分店',
+    coupon: '全场第二份半价',
+    status: Status.Checking,
+    type: MarketingType.Manual,
+  },
+  {
+    dateType: DateType.Latest30Days,
+    time: moment()
+      .subtract(27, 'day')
+      .add(1, 'hour')
+      .format(DISPLAY_DATE_FULL_FORMAT),
+    title: '🐂 一键导入： 每天都有好心情',
+    content: '小资轰趴 凡消费满 1000 减 200',
+    businessGroup: '叮当又见轰趴馆',
+    business: '天府大道25号',
+    coupon: '每满 1000 减 200',
+    status: Status.ToCheck,
+    type: MarketingType.Import,
   },
 ]
 
 export const CASES_DATA: Case[] = [
   {
-    accountName: "火锅不辣",
-    title: "赛百味疯狂星期四",
-    content: "还是分手了 ，谢谢大家。我们最终和平分手，其实从朋友到恋人我们发生了挺多事情，能走到一起也是很不容易。我喜欢你，很喜欢你，也想和你幼稚。对啊，我总问我自己为什么还能坚持，可能没有答案，我没有备胎，也不玩暧昧，我所有的脾气爱笑爱哭都给了你，我能为你做的最后一件事竟然是走出你的人生。我一点都不后悔，更谢谢你教会我成长。 我也不知道这是谁写的，挺感动的我就复制下来了，看到这里说明你很在乎我，能v我80请我吃一顿疯狂星期四的套餐吗？",
-    tagList: ["疯狂星期四", "炸鸡", "爆款"],
+    accountName: '火锅不辣',
+    title: '赛百味疯狂星期四',
+    content:
+      '还是分手了 ，谢谢大家。我们最终和平分手，其实从朋友到恋人我们发生了挺多事情，能走到一起也是很不容易。我喜欢你，很喜欢你，也想和你幼稚。对啊，我总问我自己为什么还能坚持，可能没有答案，我没有备胎，也不玩暧昧，我所有的脾气爱笑爱哭都给了你，我能为你做的最后一件事竟然是走出你的人生。我一点都不后悔，更谢谢你教会我成长。 我也不知道这是谁写的，挺感动的我就复制下来了，看到这里说明你很在乎我，能v我80请我吃一顿疯狂星期四的套餐吗？',
+    tagList: ['疯狂星期四', '炸鸡', '爆款'],
     like: 336,
-    comment: 999
-  }
+    comment: 999,
+  },
 ]

@@ -46,10 +46,28 @@ export const DATE = {
 
 export const enum Status {
   Online = 'online',
-  Preparing = 'preparing',
+  Checking = 'checking',
+  ToCheck = 'to_check',
+  All = 'all',
 }
 
 export const StatusLabel = {
   [Status.Online]: '已上线',
-  [Status.Preparing]: '准备中',
+  [Status.Checking]: '审核中',
+  [Status.ToCheck]: '待审核',
+  [Status.All]: '全部状态',
+}
+
+export const enum MarketingType {
+  Import = 'import',
+  Auto = 'auto',
+  Manual = 'manual',
+  Article = 'article',
+}
+
+export const MarketingTypeLabel = {
+  [MarketingType.Import]: '一键导入',
+  [MarketingType.Auto]: '自动营销',
+  [MarketingType.Manual]: '主动营销',
+  [MarketingType.Article]: '软文营销',
 }
