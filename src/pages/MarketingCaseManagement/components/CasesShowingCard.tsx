@@ -11,17 +11,22 @@ import React from 'react'
 // TODO：结平 + 文梁 🍓
 
 const greenColor = '#82BA67'
+const { CheckableTag } = Tag
+const suffix = (
+  <SearchOutlined
+    style={{
+      fontSize: 16,
+      color: greenColor,
+    }}
+  />
+)
 
-const CasesShowingCard: React.FC = () => {
-  const suffix = (
-    <SearchOutlined
-      style={{
-        fontSize: 16,
-        color: greenColor,
-      }}
-    />
-  )
-  const { CheckableTag } = Tag
+interface CasesShowingCardProps {
+  onCreateCase(): void
+}
+
+const CasesShowingCard: React.FC<CasesShowingCardProps> = props => {
+  const { onCreateCase } = props
 
   return (
     <div className='cases-showing-card'>
@@ -56,6 +61,7 @@ const CasesShowingCard: React.FC = () => {
             icon={<PlusOutlined />}
             style={{ backgroundColor: greenColor, borderColor: greenColor }}
             size='small'
+            onClick={onCreateCase}
           >
             新建案例
           </Button>

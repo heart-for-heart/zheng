@@ -1,17 +1,15 @@
 import { lazy } from 'react'
 
+import { MarketingCaseManagementPath } from './path'
+
 interface Route {
   path: string
   element: React.ComponentType | React.LazyExoticComponent<any>
 }
 const routes = [
   {
-    path: '/marketing_case_management',
+    path: MarketingCaseManagementPath,
     element: lazy(() => import('@/pages/MarketingCaseManagement')),
-  },
-  {
-    path: './create_case',
-    element: lazy(() => import('@/pages/CreateCase')),
   },
 ] as Route[]
 

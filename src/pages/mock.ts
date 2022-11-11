@@ -1,4 +1,4 @@
-import {Case, DataCount, UserInfo} from '@/types/marketingCasesManagement'
+import { Case, DataCount, UserInfo} from '@/types/marketingCasesManagement'
 import moment from "moment/moment";
 import {DISPLAY_TIME_FULL_FORMAT} from "@/utils/date";
 import {Status} from "@/constants/marketingCasesManagement";

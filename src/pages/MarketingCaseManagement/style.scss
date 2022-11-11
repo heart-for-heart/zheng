@@ -241,7 +241,7 @@ $color-red: #e34a4a;
       }
 
       &.selected {
-        color: #4481fc;
+        color: $primary-color;
         font-weight: 500;
       }
 
@@ -446,6 +446,50 @@ $color-red: #e34a4a;
               }
             }
           }
+        }
+      }
+    }
+
+    .create-case {
+      height: 100%;
+      flex: 1;
+      background: #f1f1f1;
+      padding: 24px 37px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      &-header {
+        height: 60px;
+        background: #fff;
+        width: 100%;
+        border-radius: 4px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding-left: 20px;
+
+        .action-btn {
+          color: #000;
+          font-size: 14px;
+
+          &.selected {
+            color: $primary-color;
+          }
+        }
+      }
+
+      &-body {
+        margin-top: 15px;
+        background: #fff;
+        width: 100%;
+        border-radius: 4px;
+        padding: 20px;
+        height: 620px;
+        display: flex;
+        justify-content: start;
+
+        .create-case-menu {
         }
       }
     }
