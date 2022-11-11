@@ -8,8 +8,14 @@ import UserInfoCard from './components/UserInfoCard'
 
 import './style.scss'
 
+const enum Page {
+  Display = 'display',
+  Detail = 'detail',
+  Create = 'create',
+}
+
 const MarketingCaseManagement: React.FC = () => {
-  const [showCreateCard, setShowCreateCard] = useState(false)
+  const [pageIndex, setPageIndex] = useState(Page.Display)
 
   return (
     <div className='marketing-case-management'>
@@ -18,12 +24,18 @@ const MarketingCaseManagement: React.FC = () => {
         首页
       </div>
       <div className='marketing-case-management-body'>
-        <UserInfoCard />
-        {showCreateCard ? (
-          <CreateCase onGoBack={() => setShowCreateCard(false)} />
-        ) : (
-          // <CasesDisplayCard onCreateCase={() => setShowCreateCard(true)} />
-      <CaseDetail />
+        <UserInfoCard onCaseDetail={() => setPageIndex(Page.Detail)} />
+        {pageIndex === Page.Create && (
+          <CreateCase onGoBack={() => setPageIndex(Page.Display)} />
+        )}
+        {pageIndex === Page.Display && (
+          <CasesDisplayCard
+            onCreateCase={() => setPageIndex(Page.Create)}
+            onCaseDetail={() => setPageIndex(Page.Detail)}
+          />
+        )}
+        {pageIndex === Page.Detail && (
+          <CaseDetail onGoBack={() => setPageIndex(Page.Display)} />
         )}
       </div>
     </div>

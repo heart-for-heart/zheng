@@ -22,11 +22,12 @@ const navOptions = [
 
 interface CasesSquareProps {
   onCreateCase(): void
+  onCaseDetail(): void
 }
 
 const CasesSquare: React.FC<CasesSquareProps> = props => {
   const [selectedNav, setSelectedNav] = useState<NavType>(NavType.Marketing)
-  const { onCreateCase } = props
+  const { onCreateCase, onCaseDetail } = props
 
   return (
     <div className='cases-square'>
@@ -44,7 +45,10 @@ const CasesSquare: React.FC<CasesSquareProps> = props => {
       </div>
       {selectedNav === NavType.Marketing && <MarketingCard />}
       {selectedNav == NavType.Cases && (
-        <CasesShowingCard onCreateCase={onCreateCase} />
+        <CasesShowingCard
+          onCreateCase={onCreateCase}
+          onCaseDetail={onCaseDetail}
+        />
       )}
     </div>
   )
