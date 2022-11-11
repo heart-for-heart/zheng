@@ -1,10 +1,10 @@
 import { MailOutlined, UserOutlined } from '@ant-design/icons'
 import React from 'react'
 
-import { USER_INFO } from '@/pages/MarketingCaseManagement/mock'
 import { UserInfo } from '@/types/marketingCasesManagement'
 
 import CasesCard from './CasesCard'
+import { USER_INFO } from '@/pages/mock'
 
 const UserInfoDetail: React.FC<UserInfo> = props => {
   const { pic, name, email } = props

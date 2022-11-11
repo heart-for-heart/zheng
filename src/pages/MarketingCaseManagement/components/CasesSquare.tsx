@@ -2,7 +2,6 @@ import { LikeOutlined, ShareAltOutlined } from '@ant-design/icons'
 import React, { ReactNode, useState } from 'react'
 
 import { NavType, NavTypeLabel } from '@/constants/marketingCasesManagement'
-import { Nav } from '@/types/marketingCasesManagement'
 
 import CasesShowingCard from './CasesShowingCard'
 import MarketingCard from './MarketingCard'
@@ -21,8 +20,13 @@ const navOptions = [
   },
 ]
 
-const CasesSquare: React.FC = () => {
+interface CasesSquareProps {
+  onCreateCase(): void
+}
+
+const CasesSquare: React.FC<CasesSquareProps> = props => {
   const [selectedNav, setSelectedNav] = useState<NavType>(NavType.Marketing)
+  const { onCreateCase } = props
 
 
   return (
@@ -40,7 +44,9 @@ const CasesSquare: React.FC = () => {
         ))}
       </div>
       {selectedNav === NavType.Marketing && <MarketingCard />}
-      {selectedNav == NavType.Cases && <CasesShowingCard />}
+      {selectedNav == NavType.Cases && (
+        <CasesShowingCard onCreateCase={onCreateCase} />
+      )}
     </div>
   )
 }

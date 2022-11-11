@@ -19,6 +19,7 @@ export const DataTypeLabel = {
 export const enum NavType {
   Marketing = 'marketing',
   Cases = 'cases',
+  CreateCase = 'create_case',
 }
 
 export const NavTypeLabel = {

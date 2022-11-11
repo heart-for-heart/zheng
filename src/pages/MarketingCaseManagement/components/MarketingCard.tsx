@@ -11,9 +11,8 @@ import {
   Status,
   StatusLabel,
 } from '@/constants/marketingCasesManagement'
-import { DISPLAY_DATE_FORMAT, DISPLAY_TIME_FULL_FORMAT } from '@/utils/date'
-
-import { SHOWING_DATA } from '../mock'
+import { DISPLAY_DATE_FORMAT } from '@/utils/date'
+import { SHOWING_DATA } from '@/pages/mock'
 
 const { Option } = Select
 const { Item } = Timeline

@@ -48,10 +48,18 @@ const getDataCountCard = () => (
   </div>
 )
 
-const CasesDisplayCard: React.FC = () => (
-  <div className='cases-display-card'>
-    {getDataCountCard()}
-    <CasesSquare />
-  </div>
-)
+interface CasesDisplayCardProps {
+  onCreateCase(): void
+}
+
+const CasesDisplayCard: React.FC<CasesDisplayCardProps> = props => {
+  const { onCreateCase } = props
+
+  return (
+    <div className='cases-display-card'>
+      {getDataCountCard()}
+      <CasesSquare onCreateCase={onCreateCase} />
+    </div>
+  )
+}
 export default CasesDisplayCard
