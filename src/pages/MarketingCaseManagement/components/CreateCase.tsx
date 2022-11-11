@@ -96,7 +96,7 @@ const CreateCase: React.FC<CreateCaseProps> = props => {
             </a>
             <a className='btn save'>保存</a>
           </div>
-          <Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }}>
+          <Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }} colon={false}>
             <Form.Item label='商户'>
               <Input />
             </Form.Item>
