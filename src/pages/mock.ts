@@ -1,13 +1,15 @@
 import moment from 'moment/moment'
 
-
 import {
   DateType,
   MarketingType,
   Status,
 } from '@/constants/marketingCasesManagement'
 import { Case, DataCount, UserInfo } from '@/types/marketingCasesManagement'
-import { DISPLAY_TIME_FULL_FORMAT , DISPLAY_DATE_FULL_FORMAT } from '@/utils/date'
+import {
+  DISPLAY_TIME_FULL_FORMAT,
+  DISPLAY_DATE_FULL_FORMAT,
+} from '@/utils/date'
 
 export const USER_INFO: UserInfo = {
   pic: 'https://avatars.githubusercontent.com/u/117912026?s=200&v=4',
