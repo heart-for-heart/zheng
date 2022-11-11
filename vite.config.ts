@@ -26,4 +26,15 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
+
+  css: {
+    preprocessorOptions: {
+      less: {
+        javascriptEnabled: true,
+        modifyVars: {
+          '@primary-color': '#1DA57A',
+        },
+      }
+    }
+  },
 })

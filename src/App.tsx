@@ -5,6 +5,7 @@ import routes from '@/routes'
 import { getRouterBasename, runtime } from '@/utils'
 
 import 'antd/dist/antd.css'
+import './custom.less'
 
 import './App.scss'
 
