@@ -1,6 +1,10 @@
 import { HeartOutlined, HeartFilled, SearchOutlined } from '@ant-design/icons'
 import { Radio, Menu, Input, Tag, List } from 'antd'
+import { observer } from 'mobx-react'
 import React, { ReactNode, useState } from 'react'
+
+
+import store from '@/stores/index'
 
 import { categoryData, labelData, hotCaseData } from '@/pages/mock'
 
@@ -38,6 +42,7 @@ const getRandomColor: () => string = () => {
 const CategoryCard: React.FC = () => (
   <div>
     <Menu
+      className='category-card'
       // onClick={onClick}
       style={{ width: 256 }}
       // defaultOpenKeys={currentCategory.key}
@@ -170,4 +175,4 @@ const CasesCard: React.FC = () => {
   )
 }
 
-export default CasesCard
+export default observer(CasesCard)

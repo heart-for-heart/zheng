@@ -1,7 +1,9 @@
+import DataStore from './data'
 import UserStore from './user'
 
 const stores = {
-  user: new UserStore(),
+  userS: new UserStore(),
+  dataS: new DataStore(),
 }
 
 export type Stores = typeof stores
