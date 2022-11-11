@@ -34,7 +34,7 @@ export default defineConfig({
         modifyVars: {
           '@primary-color': '#1DA57A',
         },
-      }
-    }
+      },
+    },
   },
 })
