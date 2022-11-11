@@ -24,6 +24,7 @@ const navOptions = [
 const CasesSquare: React.FC = () => {
   const [selectedNav, setSelectedNav] = useState<NavType>(NavType.Marketing)
 
+
   return (
     <div className='cases-square'>
       <div className='nav-items'>

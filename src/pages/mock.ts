@@ -1,4 +1,7 @@
-import { DataCount, UserInfo } from '@/types/marketingCasesManagement'
+import {Case, DataCount, UserInfo} from '@/types/marketingCasesManagement'
+import moment from "moment/moment";
+import {DISPLAY_TIME_FULL_FORMAT} from "@/utils/date";
+import {Status} from "@/constants/marketingCasesManagement";
 
 export const USER_INFO: UserInfo = {
   pic: 'https://media.kezaihui.com/temp/7ff8d148051f461ead5891ea99de7450.jpeg',
@@ -148,4 +151,81 @@ export const hotCaseData = [
     star: 50,
     isStar: true,
   },
+]
+
+export const SHOWING_DATA = [
+  {
+    time: moment().format(DISPLAY_TIME_FULL_FORMAT),
+    title: '这是自动营销：12345',
+    content: '嘻嘻嘻嘻嘻嘻',
+    businessGroup: '惠吧烤鱼',
+    business: '海亮大厦',
+    coupon: '叮叮当',
+    status: Status.Online,
+  },
+  {
+    time: moment().format(DISPLAY_TIME_FULL_FORMAT),
+    title: '这是自动营销：12345',
+    content: '嘻嘻嘻嘻嘻嘻',
+    businessGroup: '惠吧烤鱼',
+    business: '海亮大厦',
+    coupon: '叮叮当',
+    status: Status.Online,
+  },
+  {
+    time: moment().format(DISPLAY_TIME_FULL_FORMAT),
+    title: '这是自动营销：12345',
+    content: '嘻嘻嘻嘻嘻嘻',
+    businessGroup: '惠吧烤鱼',
+    business: '海亮大厦',
+    coupon: '叮叮当',
+    status: Status.Preparing,
+  },
+  {
+    time: moment().format(DISPLAY_TIME_FULL_FORMAT),
+    title: '这是自动营销：12345',
+    content: '嘻嘻嘻嘻嘻嘻',
+    businessGroup: '惠吧烤鱼',
+    business: '海亮大厦',
+    coupon: '叮叮当',
+    status: Status.Online,
+  },
+  {
+    time: moment().format(DISPLAY_TIME_FULL_FORMAT),
+    title: '这是自动营销：12345',
+    content: '嘻嘻嘻嘻嘻嘻',
+    businessGroup: '惠吧烤鱼',
+    business: '海亮大厦',
+    coupon: '叮叮当',
+    status: Status.Online,
+  },
+  {
+    time: moment().format(DISPLAY_TIME_FULL_FORMAT),
+    title: '这是自动营销：12345',
+    content: '嘻嘻嘻嘻嘻嘻',
+    businessGroup: '惠吧烤鱼',
+    business: '海亮大厦',
+    coupon: '叮叮当',
+    status: Status.Online,
+  },
+  {
+    time: moment().format(DISPLAY_TIME_FULL_FORMAT),
+    title: '这是自动营销：12345',
+    content: '嘻嘻嘻嘻嘻嘻',
+    businessGroup: '惠吧烤鱼',
+    business: '海亮大厦',
+    coupon: '叮叮当',
+    status: Status.Online,
+  },
+]
+
+export const CASES_DATA: Case[] = [
+  {
+    accountName: "火锅不辣",
+    title: "赛百味疯狂星期四",
+    content: "还是分手了 ，谢谢大家。我们最终和平分手，其实从朋友到恋人我们发生了挺多事情，能走到一起也是很不容易。我喜欢你，很喜欢你，也想和你幼稚。对啊，我总问我自己为什么还能坚持，可能没有答案，我没有备胎，也不玩暧昧，我所有的脾气爱笑爱哭都给了你，我能为你做的最后一件事竟然是走出你的人生。我一点都不后悔，更谢谢你教会我成长。 我也不知道这是谁写的，挺感动的我就复制下来了，看到这里说明你很在乎我，能v我80请我吃一顿疯狂星期四的套餐吗？",
+    tagList: ["疯狂星期四", "炸鸡", "爆款"],
+    like: 336,
+    comment: 999
+  }
 ]
